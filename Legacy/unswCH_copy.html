@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>UNSW Course Helper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="../static/bootstrap_2.css" type="text/css">
+    <link rel="stylesheet" href="../static/main.css?v=1114" type="text/css">
+    <link rel="stylesheet" href="../static/unswCH.css?v={{tag}}" type="text/css">
+    <script type="text/javascript" src="../static/js/unswch.js?v={{tag}}"></script>
+    <script type="text/javascript" src="../static/js/ModuleSystem.js?v={{tag}}"></script>
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+  </head>
+  <body style="padding: 10%" onload="initialiseUnswchModules();">
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand">UNSW Course Helper</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav" style="float: right;">
+            <li><a href="/"> From Zain Afzal </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="form-module-settings"></div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label class="control-label" for="fac_code">Faculty Code</label>
+          <input class="form-control" id="fac_code" type="text" placeholder="COMP">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label class="control-label" for="semester">Semester</label>
+          <select class="form-control" id="semester">
+            <option>1</option>
+            <option>2</option>
+            <option>Summer</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label class="control-label">Add a Met Prereq</label>
+          <div class="input-group">
+            <input id="prereq_in" type="text" class="form-control" placeholder="COMP1917">
+            <span class="input-group-btn">
+              <button class="btn btn-success" type="button" onclick="addPrereq('prereq_in');">+</button>
+            </span>
+          </div>
+          <label class="text-danger" id="prereq_in_err"></label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label class="control-label">Add a Met Coreq</label>
+          <div class="input-group">
+            <input id="coreq_in" type="text" class="form-control" placeholder="COMP1927">
+            <span class="input-group-btn">
+              <button class="btn btn-info" type="button" onclick="addCoreq('coreq_in');">+</button>
+            </span>
+          </div>
+          <label class="text-danger" id="coreq_in_err"></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label class="control-label"> Met Prereqs/Coreqs </label>
+      </div>
+    </div>
+    <div class="row">
+      <div id="req_list" class="col-md-12">
+
+      </div>  
+    </div>
+  </body>
+</html>
